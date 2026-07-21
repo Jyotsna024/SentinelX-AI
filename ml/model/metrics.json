@@ -1,0 +1,18 @@
+{
+  "n_test_records": 82332,
+  "n_normal": 37000,
+  "n_attack": 45332,
+  "accuracy": 0.6227,
+  "precision": 0.8729,
+  "recall": 0.3684,
+  "f1_score": 0.5181,
+  "roc_auc": 0.786,
+  "false_positive_rate": 0.0657,
+  "confusion_matrix": {
+    "tn": 34569,
+    "fp": 2431,
+    "fn": 28631,
+    "tp": 16701
+  },
+  "note": "Metrics computed from IsolationForest on UNSW-NB15 testing-set. Anomaly (+1 label) = predicted as attack. ROC-AUC uses negated decision_function as the anomaly score."
+}

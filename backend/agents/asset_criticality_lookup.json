@@ -1,0 +1,42 @@
+{
+  "hospital_db": {
+    "criticality": 10,
+    "impact_weight": 1.0,
+    "description": "Primary patient records and clinical database. Compromise has life-safety implications."
+  },
+  "domain_controller": {
+    "criticality": 9,
+    "impact_weight": 0.95,
+    "description": "Active Directory domain controller. Compromise yields full network lateral movement."
+  },
+  "backup_server": {
+    "criticality": 7,
+    "impact_weight": 0.80,
+    "description": "Centralised backup storage. Ransomware targeting this eliminates recovery capability."
+  },
+  "email_server": {
+    "criticality": 5,
+    "impact_weight": 0.60,
+    "description": "Organisation mail server. Compromise enables phishing, BEC, and data exfiltration."
+  },
+  "employee_laptop": {
+    "criticality": 3,
+    "impact_weight": 0.35,
+    "description": "Standard end-user workstation. Limited blast radius; may serve as lateral movement pivot."
+  },
+  "file_server": {
+    "criticality": 6,
+    "impact_weight": 0.70,
+    "description": "Shared file server hosting departmental documents and sensitive data."
+  },
+  "vpn_gateway": {
+    "criticality": 8,
+    "impact_weight": 0.85,
+    "description": "Remote access VPN gateway. Compromise exposes full internal network perimeter."
+  },
+  "web_server": {
+    "criticality": 5,
+    "impact_weight": 0.55,
+    "description": "Public-facing web application server. Breach may enable pivot to internal network."
+  }
+}

@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Design Token Layer ─────────────────────────────────────────── */
+:root {
+  --bg: #0b0f19;
+  --card: #111827;
+  --card-hover: #1a2234;
+  --border: #1e2d45;
+  --border-subtle: #162033;
+
+  --text: #e2e8f0;
+  --text-muted: #94a3b8;
+  --text-faint: #475569;
+
+  --danger: #ef4444;
+  --danger-muted: rgba(239, 68, 68, 0.15);
+
+  --warning: #f59e0b;
+  --warning-muted: rgba(245, 158, 11, 0.15);
+
+  --success: #10b981;
+  --success-muted: rgba(16, 185, 129, 0.15);
+
+  --accent: #6366f1;
+  --accent-muted: rgba(99, 102, 241, 0.15);
+
+  --purple: #a78bfa;
+  --purple-muted: rgba(167, 139, 250, 0.15);
+
+  --scrollbar-track: #111827;
+  --scrollbar-thumb: #1e2d45;
+}
+
+/* ── Base Reset ──────────────────────────────────────────────────── */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: "Inter", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* ── Scrollbar ───────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border);
+}
+
+/* ── Custom Utility Classes ──────────────────────────────────────── */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+}
+
+.card-hover {
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.card-hover:hover {
+  background: var(--card-hover);
+  border-color: var(--accent-muted);
+}
+
+.badge-danger {
+  background: var(--danger-muted);
+  color: var(--danger);
+  border: 1px solid var(--danger);
+}
+.badge-warning {
+  background: var(--warning-muted);
+  color: var(--warning);
+  border: 1px solid var(--warning);
+}
+.badge-success {
+  background: var(--success-muted);
+  color: var(--success);
+  border: 1px solid var(--success);
+}
+.badge-accent {
+  background: var(--accent-muted);
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+.badge-purple {
+  background: var(--purple-muted);
+  color: var(--purple);
+  border: 1px solid var(--purple);
+}
+
+/* ── Glow Pulse Animations ───────────────────────────────────────── */
+@keyframes glowDanger {
+  0%, 100% { box-shadow: 0 0 6px 1px rgba(239, 68, 68, 0.3); }
+  50%       { box-shadow: 0 0 18px 5px rgba(239, 68, 68, 0.7); }
+}
+@keyframes glowWarning {
+  0%, 100% { box-shadow: 0 0 6px 1px rgba(245, 158, 11, 0.3); }
+  50%       { box-shadow: 0 0 18px 5px rgba(245, 158, 11, 0.7); }
+}
+@keyframes glowSuccess {
+  0%, 100% { box-shadow: 0 0 6px 1px rgba(16, 185, 129, 0.3); }
+  50%       { box-shadow: 0 0 18px 5px rgba(16, 185, 129, 0.7); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-16px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes scanline {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+.animate-fade-in    { animation: fadeIn 0.3s ease-out both; }
+.animate-slide-in   { animation: slideInLeft 0.25s ease-out both; }
+.animate-glow-danger  { animation: glowDanger 2s ease-in-out infinite; }
+.animate-glow-warning { animation: glowWarning 2s ease-in-out infinite; }
+.animate-glow-success { animation: glowSuccess 2s ease-in-out infinite; }
+
+/* React Flow override: make it transparent */
+.react-flow__renderer { background: transparent !important; }
+.react-flow__background { background: transparent !important; }
